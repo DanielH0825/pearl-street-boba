@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pearl Street Boba</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 1.5rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #222;
+      background: #f7f7f7;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header p {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    nav a {
+      color: #2e7d32;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 2rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(12rem, 20rem);
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background: #e8f5e9;
+      border-radius: 0.5rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 18rem;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+    }
+
+    .hero p {
+      margin-bottom: 1rem;
+    }
+
+    .hero a {
+      display: inline-block;
+      padding: 0.65rem 1rem;
+      color: #fff;
+      background: #2e7d32;
+      border-radius: 0.25rem;
+      text-decoration: none;
+    }
+
+    .drink-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 0 0 1.25rem;
+    }
+
+    .list-row,
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .list-row {
+      margin-bottom: 1rem;
+    }
+
+    .category-bubble {
+      padding: 1rem;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+        url("images/ice-background.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border: 2px solid #000;
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px rgba(46, 125, 50, 0.08);
+    }
+
+    .category-bubble p:last-child {
+      margin-bottom: 0;
+    }
+
+    .category-bubble p,
+    .category-bubble li {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 0.25rem;
+      padding: 0.15rem 0.35rem;
+    }
+
+    .category-bubble ul {
+      padding-left: 1.5rem;
+    }
+
+    .info-row {
+      margin-top: 1.75rem;
+    }
+
+    .list-row h2,
+    .info-row h2 {
+      margin-top: 0;
+    }
+
+    .drink-card {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 0.35rem;
+    }
+
+    .drink-card img {
+      width: 100%;
+      height: 9rem;
+      object-fit: cover;
+    }
+
+    .drink-card-content {
+      padding: 0.75rem;
+    }
+
+    .drink-card h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1rem;
+    }
+
+    .drink-card p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .drink-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .list-row,
+      .info-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+    }
+
+    h2 {
+      margin: 1.75rem 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin: 0 0 0.65rem;
+      max-width: 36rem;
+    }
+
+    ul {
+      margin: 0 0 0.75rem;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 2px solid #c8e0ca;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin-bottom: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Pearl Street Boba</p>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#hours">Hours</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Fresh Boba, Made for Your Day</h1>
+      <p>Handcrafted tea and chewy pearls, right near campus.</p>
+      <a href="#menu">See the Menu</a>
+    </div>
+    <img class="hero-image" src="images/hero.jpg" alt="Brown sugar boba tea held in front of spring blossoms" />
+  </section>
+
+  <p>Owner: Kai</p>
+
+  <h2 id="about">About</h2>
+  <p>Small boba shop on Pearl Street and 4th. Fresh tea. Soft pearls. Fast orders.</p>
+
+  <h2 id="menu">Menu</h2>
+  <div class="drink-gallery" aria-label="Featured drinks">
+    <article class="drink-card">
+      <img src="images/brown-sugar-cup.jpg" alt="Brown sugar boba tea" />
+      <div class="drink-card-content">
+        <h3>Brown Sugar Milk Tea</h3>
+        <p>Rich milk tea with brown sugar pearls.</p>
+      </div>
+    </article>
+    <article class="drink-card">
+      <img src="images/layered.jpg" alt="Layered fruit and milk tea" />
+      <div class="drink-card-content">
+        <h3>Layered Fruit Tea</h3>
+        <p>Bright fruit flavors layered over creamy tea.</p>
+      </div>
+    </article>
+    <article class="drink-card">
+      <img src="images/milk-tea.jpg" alt="Classic milk tea with boba" />
+      <div class="drink-card-content">
+        <h3>Classic Milk Tea</h3>
+        <p>Our smooth, familiar favorite with chewy boba.</p>
+      </div>
+    </article>
+    <article class="drink-card">
+      <img src="images/strawberry.jpg" alt="Strawberry fruit tea" />
+      <div class="drink-card-content">
+        <h3>Strawberry Fruit Tea</h3>
+        <p>Refreshing strawberry tea with a crisp finish.</p>
+      </div>
+    </article>
+    <article class="drink-card">
+      <img src="images/taro.jpg" alt="Taro milk tea" />
+      <div class="drink-card-content">
+        <h3>Taro Milk Tea</h3>
+        <p>Sweet, creamy taro flavor in every sip.</p>
+      </div>
+    </article>
+  </div>
+  <div class="list-row">
+    <section class="category-bubble">
+      <p>Drinks:</p>
+      <ul>
+        <li>Classic Milk Tea with Boba - $5.50</li>
+        <li>Brown Sugar Milk Tea - $6.00</li>
+        <li>Taro Milk Tea - $6.00</li>
+        <li>Matcha Latte with Boba - $6.25</li>
+        <li>Thai Tea - $5.75</li>
+        <li>Mango Green Tea - $5.50</li>
+        <li>Strawberry Fruit Tea - $5.50</li>
+        <li>Honey Lemon Green Tea - $5.25</li>
+        <li>Wintermelon Tea - $5.00</li>
+        <li>Oolong Milk Tea - $5.75</li>
+      </ul>
+    </section>
+
+    <section class="category-bubble">
+      <p>Toppings:</p>
+      <ul>
+        <li>Classic boba pearls - +$0.75</li>
+        <li>Brown sugar pearls - +$1.00</li>
+        <li>Lychee jelly - +$0.75</li>
+        <li>Aloe jelly - +$0.75</li>
+        <li>Pudding - +$0.75</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="category-bubble">
+    <p>Sweetness: 0%, 30%, 50%, 70%, or 100%</p>
+    <p>Ice: Extra ice, regular ice, or less ice</p>
+  </section>
+
+  <div class="info-row">
+    <section>
+      <h2 id="hours">Hours</h2>
+      <p>Mon-Wed: 11:00 AM - 8:00 PM</p>
+      <p>Thu-Fri: 11:00 AM - 9:00 PM</p>
+      <p>Sat: 12:00 PM - 9:00 PM</p>
+      <p>Sun: 12:00 PM - 7:00 PM</p>
+    </section>
+
+    <section>
+      <h2 id="location">Location</h2>
+      <p>418 Pearl Street</p>
+      <p>Across from the campus bookstore</p>
+      <p>Look for the green awning</p>
+    </section>
+  </div>
+
+  <h2>Deals</h2>
+  <p>Student discount on classic milk tea on weekday afternoons</p>
+
+  <h2 id="contact">Contact</h2>
+  <p>Email: kai@pearlstreetboba.example</p>
+  <p>Phone: (555) 014-2288</p>
+
+  <footer>
+    <p><strong>Pearl Street Boba</strong> &middot; 418 Pearl Street</p>
+    <p>Open daily &middot; Call (555) 014-2288</p>
+    <p>&copy; 2026 Pearl Street Boba. Fresh tea near campus.</p>
+  </footer>
+</body>
+</html>
